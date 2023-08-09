@@ -34,9 +34,6 @@ function handleSubmit(){
           <Navbar.Collapse id="responsive-navbar-nav" >
             <Nav className="me-auto">
               <Nav.Link href="#features">Blog</Nav.Link>
-              <Nav.Link href="#pricing">Help</Nav.Link>
-              <Nav.Link href="#pricing">About</Nav.Link>
-              <Nav.Link href="#pricing">Contact</Nav.Link>
             </Nav>
             <>
               <Button onClick={props.logout} style={{maxHeight:"50px" , marginRight:"10px"}}>Log Out</Button>
