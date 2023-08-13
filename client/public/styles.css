@@ -131,3 +131,12 @@ footer p {
   left: 42%;
   z-index: 100;
 }
+
+.alert{
+  position: fixed;
+  text-align: center;
+  min-width: 30%;
+  display: none;
+  z-index: 1;
+}
+

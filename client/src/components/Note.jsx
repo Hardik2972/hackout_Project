@@ -2,6 +2,8 @@ import {useEffect, useState} from 'react';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import io from 'socket.io-client';
+import Comment from './Comment';
+import avatar from '../user.png';
 
 const socket= io.connect("http://localhost:8080")
 
@@ -46,6 +48,11 @@ function listenClick(){
 }
   return (
     <div className="note">
+      <div style={{marginBottom:"-20px"}}>
+        <img src={props.userImage === ""?avatar : props.userImage} style={{float:"left",width:"50px",height:"50px",borderRadius:"50%",marginLeft:"20px"}}/>
+        <p style={{float:"left",marginLeft:"20px",fontWeight:"bold"}}>{props.username}</p>
+      </div>
+      <hr />
       <h1>{props.title}</h1>
       <p>{props.content}</p>
       <img src={props.postImage} />
@@ -62,10 +69,9 @@ function listenClick(){
         <div style={{display:"flex" , flexDirection:"column"}}>
         {com && flag? com.map((noteItem, idx) => {
           if(idx<len){
-              return (
-              <div key={idx}>
-                <hr />
-                <p style={{float:"left"}}>{noteItem.comment}</p>
+            return (
+              <div key={idx} style={{display:"flex"}}>
+                <Comment com={noteItem} />
               </div>
               )
             }

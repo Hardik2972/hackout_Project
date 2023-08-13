@@ -2,6 +2,8 @@ import {useState,useEffect} from "react";
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import io from 'socket.io-client';
+import Comment from "./Comment";
+import avatar from "../user.png";
 
 const socket= io.connect("http://localhost:8080")
 
@@ -41,7 +43,12 @@ function Userposts(props) {
   }
   return (
     <div className="note">
-      <button onClick={handleClick} id="delete">DELETE</button>
+      <div style={{marginBottom:"-20px"}}>
+        <img src={props.userImage === ""?avatar : props.userImage} style={{float:"left",width:"50px",height:"50px",borderRadius:"50%",marginLeft:"20px"}}/>
+        <p style={{float:"left",marginLeft:"20px",fontWeight:"bold"}}>{props.username}</p>
+        <button onClick={handleClick} id="delete" style={{float:"right"}}>DELETE</button>
+      </div>
+      <hr />
       <h1>{props.title}</h1>
       <p>{props.content}</p>
       <img src={props.postImage} />
@@ -60,9 +67,8 @@ function Userposts(props) {
           flag && com ? com.map((noteItem, idx) => {
             if(idx<=len){
               return (
-              <div key={idx}>
-                <hr />
-                <p style={{float:"left"}}>{noteItem.comment}</p>
+              <div key={idx} style={{display:"flex"}}>
+                <Comment com={noteItem} />
               </div>
               )
             }

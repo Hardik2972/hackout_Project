@@ -19,7 +19,6 @@ function CreateArea(props) {
   }
 
   function submitNote(event) {
-    console.log(post);
     props.onAdd(post);
     setPost({
       title: "",
@@ -27,11 +26,6 @@ function CreateArea(props) {
       myFile: ""
     });
     event.preventDefault();
-  }
-
-  function changeFlag(event){
-    console.log(event.target.value)
-    props.flag(event.target.value);
   }
 
   async function handleFileUpload(e){
@@ -68,10 +62,6 @@ function CreateArea(props) {
         
         <button>Post</button>
       </form>
-      <div style={{display:"flex"}}>
-        <button onClick={changeFlag} style={{width:"100%" , margin:"10px"}} value={0}>My Posts</button>
-        <button onClick={changeFlag} style={{width:"100%" , margin:"10px"}} value={1}>Community Feeds</button>
-      </div>
     </div>
   );
 }

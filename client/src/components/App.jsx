@@ -5,6 +5,7 @@ import Signup from "./Signup";
 import Secret from "./Secret";
 import Gif from "../ZZ5H.gif";
 import io from 'socket.io-client';
+import Profile from "./Profile";
 
 const socket= io.connect("http://localhost:8080")
 
@@ -154,6 +155,7 @@ function Root() {
         <Route path='/' element={isAuthorized === 1?<Secret logout={removeSession} like={updatePost} addComment={addComment} getComments={getComments} getProfile={getProfile} upDate={updateProfile} /> : <Login onCheck={checkUser}/>} />
         <Route path='/signup' element={isAuthorized === 1?<Secret logout={removeSession} like={updatePost} addComment={addComment} getComments={getComments} getProfile={getProfile} upDate={updateProfile} /> : <Signup onAdd={addUser} otp={sendOtp} />} />
         <Route path='/secret' element={isAuthorized === 1?<Secret logout={removeSession} like={updatePost} addComment={addComment} getComments={getComments} getProfile={getProfile} upDate={updateProfile} /> : <Login onCheck={checkUser}/>} />
+        <Route path="/profile" element={<Profile getProfile={getProfile} upDate={updateProfile} logout={removeSession} like={updatePost} addComment={addComment} getComments={getComments}/>} />
       </Routes>
   );
 }
