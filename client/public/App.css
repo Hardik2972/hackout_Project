@@ -2,36 +2,35 @@
     position: relative;
     display: inline-block;
   }
-.Form{
+  
+  #outer{
     display: flex;
-    flex-direction: row;
-    margin: 0;
-    padding: 0;
-   
+    flex-wrap: wrap-reverse;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
   }
 
-  .components{
-    margin:1px;
-  }
   #map{
     border:2px solid black;
     border-radius: 7px;
     margin: 1%;
-    width: 67%;
-    height: 500px;
+    width: 60%;
+    height: 90vh;
   }
 
   #first{
     display: flex;
     flex-direction: column;
+    width: 30%;
+    height: 80vh;
     background: #fad675;
     border-radius: 7px;
     box-shadow: 0 2px 5px #ccc;
     padding: 10px;
-    width: 25%;
     margin-left: 5%;
     margin-right: 2%;
-    justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap;
   }
+
+  

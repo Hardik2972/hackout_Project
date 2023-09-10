@@ -231,6 +231,8 @@ hr{
 }
 
 #chat{
+  display: flex;
+  justify-content: center;
   background-color: red;
   height: 500px;
   width: 30%;

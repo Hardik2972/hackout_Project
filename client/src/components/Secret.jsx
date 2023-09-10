@@ -7,6 +7,7 @@ import Userposts from "./userPosts";
 import io from 'socket.io-client';
 import PostHeader from "./PostHeader";
 import avatar from '../user.png';
+import ChatBot from "./ChatBot";
 
 const socket= io.connect("http://localhost:8080")
 
@@ -80,7 +81,7 @@ function Secret(props){
         </div>
         <div id="chat">
           <div>
-            
+            <ChatBot />
           </div>
         </div>
         <div className="smallChat">
@@ -89,6 +90,9 @@ function Secret(props){
               <button onClick={()=>setShowChatModal(false)} style={{alignSelf: "flex-end", margin: "2px"}}>
                 cancel
               </button>
+              <div>
+                <ChatBot />
+              </div>
             </div>}
         </div>
       </div>
