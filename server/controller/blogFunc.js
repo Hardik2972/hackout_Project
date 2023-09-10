@@ -1,7 +1,18 @@
 const User = require("../models/User");
 const blog = require("../models/Blog");
 const comment = require("../models/Comment");
+const Report = require("../models/Report");
 const {getUser} = require("../services/auth");
+
+const handleReport = async (req,res)=>{
+    const {time,text,ComplaintCases} = req.body;
+    const userReport = new Report();
+    userReport.problem=text;
+    userReport.complaintCases=ComplaintCases;
+    userReport.timeOfIncident=time;
+    await userReport.save();
+    return res.redirect("http://localhost:3000/");
+}
 
 async function hanadleMyPosts(req,res){
     const blogs= await blog.find({user_id: getUser(req.body.userToken)._id}).populate('user_id');
@@ -52,5 +63,5 @@ async function handleAddPost(data){
     const save= await user.save();
 }
 
-module.exports= {hanadleMyPosts , handlePosts, handleUpdate, handleComments, handleProfile, handleAddcomment, handleDeletePost, handleAddPost};
+module.exports= {hanadleMyPosts , handlePosts, handleUpdate, handleComments, handleProfile, handleAddcomment, handleDeletePost, handleAddPost, handleReport};
 

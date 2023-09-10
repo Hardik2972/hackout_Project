@@ -11,6 +11,8 @@ function Note(props) {
   const [com,setCom] = useState([]);
   const [len,setLen] = useState(2);
   const [flag,setFlag] = useState(false);
+  const [showcomment,setshowcomment] = useState(false);
+  const [like,setlike] = useState(false);
   /*
   for like only
   function handleClick() {
@@ -46,17 +48,32 @@ function listenClick(){
   getComments();
   setFlag(true);
 }
+
+function increaselike(){
+  if(like===true) setlike(false);
+  else if(like===false) setlike(true);
+}
+
   return (
     <div className="note">
-      <div style={{marginBottom:"-20px"}}>
-        <img src={props.userImage === ""?avatar : props.userImage} style={{float:"left",width:"50px",height:"50px",borderRadius:"50%",marginLeft:"20px"}}/>
-        <p style={{float:"left",marginLeft:"20px",fontWeight:"bold"}}>{props.username}</p>
+      <div id="noteheader">
+        <img src={props.userImage === ""?avatar : props.userImage} style={{float:"left",width:"30px",height:"30px",borderRadius:"50%",margin:"5px"}}/>
+        <p style={{float:"left",margin:"10px",fontWeight:"bold", fontSize:"15px"}}>{props.username}</p>
       </div>
       <hr />
       <h1>{props.title}</h1>
       <p>{props.content}</p>
-      <img src={props.postImage} />
-      <form onSubmit={(e)=> addComment(e)}>
+      {props.image!="" && <img src={props.postImage} />}
+      <hr/>
+      <div>
+        <p>{props.likes}-likes</p>
+      </div>
+      <div className="noteFooter">
+          <button onClick={increaselike}>Like</button>
+          <button>comment</button>
+          <button>send</button>
+      </div>
+      {/* <form onSubmit={(e)=> addComment(e)}>
           <FloatingLabel
             controlId="floatingTextarea"
             label="Comments"
@@ -65,7 +82,7 @@ function listenClick(){
             <Form.Control as="textarea" placeholder="Leave a comment here" onClick={listenClick}/>
           </FloatingLabel>
           <button type="submit">Submit</button>
-        </form>
+      </form>
         <div style={{display:"flex" , flexDirection:"column"}}>
         {com && flag? com.map((noteItem, idx) => {
           if(idx<len){
@@ -78,7 +95,7 @@ function listenClick(){
             return (<></>)
         }) : <></>}
         {flag && com.length>0?<p onClick={incLen}>load more...</p> : <></>}
-        </div>
+        </div> */}
     </div>
   );
 }

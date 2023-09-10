@@ -25,6 +25,7 @@ function CreateArea(props) {
       content: "",
       myFile: ""
     });
+    props.closeModal();
     event.preventDefault();
   }
 
@@ -35,7 +36,10 @@ function CreateArea(props) {
   }
 
   return (
-    <div>
+    <>
+    <div className="modal-wrapper"></div>
+    <div className="createpost">
+      
       <form id="addPostForm" onSubmit={submitNote}>
         <input
           name="title"
@@ -59,10 +63,11 @@ function CreateArea(props) {
           placeholder="upload"
           onChange={(e) => handleFileUpload(e)}
         />
-        
-        <button>Post</button>
+        <button className="crossbutton" onClick={props.closeModal}>cancel</button>
+        <button id="b" >Post</button>
       </form>
     </div>
+    </>
   );
 }
 
