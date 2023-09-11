@@ -84,10 +84,7 @@ footer p {
 }
 
 #addPostForm {
-  position: fixed;
-  width: 50%;
-  
-  /* margin: 30px auto 20px auto; */
+  width: 100%;
   background: #fff;
   padding: 15px;
   border-radius: 7px;
@@ -104,15 +101,13 @@ footer p {
   resize: none;
 }
 #b{
-  position: absolute;
-  right: 18px;
-  bottom: -18px;
+  position: relative;
+  float: right;
   background: #f5ba13;
   color: #fff;
   border: none;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
+  border-radius: 20%;
+  padding: 5px 10px 5px 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   outline: none;
@@ -162,14 +157,17 @@ footer p {
   flex-grow: 1;
   margin: 7px;
   border-radius: 20px;
-  background-color: #efebeb;
+  background-color: #ebe5e5;
+  color: #000000;
 }
 
 .crossbutton{
   color:black;
   display: inline;
   border: 1px solid black;
+  background-color: rgb(243, 44, 44);
   border-radius: 7px;
+  float: right;
 }
 
 .modal-wrapper{
@@ -186,10 +184,8 @@ footer p {
 .createpost{
   z-index: 2;
   display: flex;
-  /* align-items: center; */
+  align-items: center; 
   justify-content: center;
-  margin: 0;
-  
 }
 hr{
   width:40%;
@@ -231,11 +227,12 @@ hr{
 }
 
 #chat{
-  background-color: red;
-  height: 500px;
+  display: flex;
+  background-color: #D3D3D3;
+  align-items: center;
+  flex-direction: column;
+  height: 580px;
   width: 30%;
-  margin-right: 5%;
-  margin-left: 1%;
   border-radius: 7px;
   margin-top: 16px;
 }
@@ -248,7 +245,7 @@ hr{
     display:none;
   }
   
-  #bolg{
+  #blog{
     width: 50%;
     margin-left: 5%;
     margin-right: 1%;
@@ -257,14 +254,12 @@ hr{
   #chat{
     width: 38%;
     margin-left: 1%;
-    margin-right: 5%; 
   }
 }
 
 @media (max-width: 786px){
   #blog{
     width: 90%;
-    margin-right: 5%;
     margin-left: 5%;
   }
   
@@ -282,10 +277,11 @@ hr{
   #smallChatArea{
     display:flex;
     flex-direction: column;
+    align-items: center;
     position: fixed;
     bottom: 3%;
     right: 3%;
-    background-color: violet;
+    background-color: #D3D3D3;
     top: 20%;
     left:10%;
     border-radius: 7px;
@@ -299,4 +295,3 @@ hr{
     background-color: #9563f8;
   }
 }
-

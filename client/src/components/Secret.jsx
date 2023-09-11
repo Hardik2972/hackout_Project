@@ -7,6 +7,8 @@ import Userposts from "./userPosts";
 import io from 'socket.io-client';
 import PostHeader from "./PostHeader";
 import avatar from '../user.png';
+import ChatBot from "./ChatBot";
+import bot from "../bot.png"
 
 const socket= io.connect("http://localhost:8080")
 
@@ -49,7 +51,7 @@ function Secret(props){
   }
 
    return(
-     <div style={{display:"flex" , flexFlow:"wrap" , flexDirection:"column" , alignItems:"center"}}>
+     <div style={{display:"flex" , flexFlow:"wrap" , flexDirection:"column" , alignItems:"center" ,justifyContent:"space-evenly"}}>
 	    <Header logout={props.logout}/>
       <div id="main">
         <div id="mainprofile">
@@ -79,16 +81,25 @@ function Secret(props){
           })}
         </div>
         <div id="chat">
-          <div>
-            
+          <div style={{height:"60px",width:"100%",backgroundColor:"blueviolet",borderRadius:'10px 10px 0px 0px',display:'flex',alignItems:'center'}}>
+            <img src={bot} style={{float:"left",marginLeft:"5px"}}/>
+            <h3 style={{marginLeft:'5px',color:"#fff"}}>Saheli</h3>
           </div>
+          <ChatBot />
         </div>
         <div className="smallChat">
-            <button  onClick={()=>setShowChatModal(true)} id="chatbotbutton">Chat</button>
+            <button  onClick={()=>setShowChatModal(true)} id="chatbotbutton">chat</button>
             {showChatModal && <div id="smallChatArea">
-              <button onClick={()=>setShowChatModal(false)} style={{alignSelf: "flex-end", margin: "2px"}}>
-                cancel
-              </button>
+              <div style={{height:"60px",width:"100%",backgroundColor:"blueviolet",borderRadius:'10px 10px 0px 0px',display:'flex',alignItems:'center'}}>
+                <img src={bot} style={{float:"left",marginLeft:"5px"}}/>
+                <h3 style={{marginLeft:'5px',color:"#fff"}}>Saheli</h3>
+                <button onClick={()=>setShowChatModal(false)} style={{position:"absolute",right:"10px"}}>
+                  cancel
+                </button>
+              </div>
+              <div>
+                <ChatBot />
+              </div>
             </div>}
         </div>
       </div>

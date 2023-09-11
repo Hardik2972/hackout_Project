@@ -42,7 +42,7 @@ function Userposts(props) {
     setFlag(true);
   }
   return (
-    <div className="note">
+    <div className="note" style={{width:"60%"}}>
       <div style={{marginBottom:"-20px"}}>
         <img src={props.userImage === ""?avatar : props.userImage} style={{float:"left",width:"50px",height:"50px",borderRadius:"50%",marginLeft:"20px"}}/>
         <p style={{float:"left",marginLeft:"20px",fontWeight:"bold"}}>{props.username}</p>

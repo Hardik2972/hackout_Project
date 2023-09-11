@@ -4,7 +4,8 @@
   "description": "my backend server",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -18,5 +19,13 @@
     "mongoose": "^7.4.2",
     "nodemailer": "^6.9.4",
     "socket.io": "^4.7.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AyusGup/SIH-Project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AyusGup/SIH-Project/issues"
+  },
+  "homepage": "https://github.com/AyusGup/SIH-Project#readme"
 }
