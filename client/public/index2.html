@@ -21,8 +21,7 @@
     <title>Report</title>
   </head>
   <body>
-    <div id="outer">
-      <h1 style="text-align: center;">REPORT ISSUE</h1>
+    <h1 style="text-align: center;">REPORT ISSUE</h1> 
     <form class="Form" action="http://localhost:8080/api/report" method="post">
       
       <div id="first">
@@ -45,14 +44,12 @@
         <input value="123" name="latitude" id="lat" style="display: none;"></input>
         <input value="456" name="longitude" id="lng" style="display: none;"></input>
         <div class="components">
-          <button type='submit' onclick="position()">Report</button>
+          <button style="width: 100%;" type='submit' onclick="position()">Report</button>
         </div>
         
       </div>
-      <div id="map">
-      </div>
+      <div id="map"></div>
     </form>
-    </div>
     <!-- year of report, problem, time of incident, latitude and longitude, feedback yeh chije daal dio -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="

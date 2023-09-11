@@ -5,10 +5,11 @@ import Navbar from 'react-bootstrap/Navbar';
 import avatar from '../user.png';
 import { useState } from 'react';
 
+/**/
 function OffcanvasExample(props) {
   
   return (
-    <Navbar expand="lg"  id="top" className="bg-body-tertiary" sticky="top" style={{width:"100%"}}>
+    <Navbar expand="lg" id="top" className="bg-body-tertiary" sticky="top" style={{width:"100%"}}>
       <Container>
         <Navbar.Brand>DreamBlog</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -19,6 +20,7 @@ function OffcanvasExample(props) {
           <>
             <Button onClick={props.emergency} style={{maxHeight:"50px" , marginRight:"10px"}}>Emergency</Button>
             <Button href="/index2.html" style={{maxHeight:"50px" , marginRight:"10px"}}>Feedback</Button>
+            <Button href="/index2.html" style={{maxHeight:"50px" , marginRight:"10px"}}>Report</Button>
             <Button onClick={props.logout} style={{maxHeight:"50px" , marginRight:"10px"}}>Log Out</Button>
             <Button
                 href="/profile"

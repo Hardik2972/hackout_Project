@@ -38,9 +38,11 @@ function CreateArea(props) {
   return (
     <>
     <div className="modal-wrapper"></div>
+    <div id="createpostcover">
     <div className="createpost">
       
       <form id="addPostForm" onSubmit={submitNote}>
+      <button className="crossbutton" onClick={props.closeModal}>cancel</button>
         <input
           name="title"
           onChange={handleChange}
@@ -63,9 +65,10 @@ function CreateArea(props) {
           placeholder="upload"
           onChange={(e) => handleFileUpload(e)}
         />
-        <button className="crossbutton" onClick={props.closeModal}>cancel</button>
+        <hr />
         <button id="b" >Post</button>
       </form>
+    </div>
     </div>
     </>
   );

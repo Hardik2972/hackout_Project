@@ -10,7 +10,7 @@ function PostHeader(props){
     }
     
     return(
-    <div class="postheader">
+    <div className="postheader">
         <img src={props.image === ""? avatar : props.image} style={{float:"left",width:"50px",height:"50px",borderRadius:"50%",marginLeft:"20px"}}/>
         <button onClick={()=>setShowModal(true)} id="startapost">Start a post</button>
         {showmodal && <CreateArea closeModal={closeModal} onAdd={props.onAdd}/>}

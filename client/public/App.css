@@ -1,37 +1,43 @@
-.dropdown {
-    position: relative;
-    display: inline-block;
-  }
-.Form{
+  .Form{
     display: flex;
-    flex-direction: row;
-    margin: 0;
-    padding: 0;
-   
+    flex-wrap: wrap-reverse;
+    align-items: center;
+    justify-content: space-around;
   }
 
-  .components{
-    margin:1px;
-  }
-  #map{
-    border:2px solid black;
-    border-radius: 7px;
-    margin: 1%;
-    width: 67%;
-    height: 500px;
-  }
+  
 
   #first{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    height: 80vh;
     background: #fad675;
     border-radius: 7px;
     box-shadow: 0 2px 5px #ccc;
     padding: 10px;
-    width: 25%;
-    margin-left: 5%;
-    margin-right: 2%;
-    justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap;
+    min-width: 20%;
+  }
+ 
+  #map{
+    border:2px solid black;
+    border-radius: 7px;
+    width: 60%;
+    height: 80vh;
+  }
+  @media (max-width:1100px) {
+    #map{
+      width: 80%;
+      height: 50vh;
+      margin-bottom: 10vh;
+    }
+    #first{
+      width: 80%;
+      height: 50vh;
+    }
+  }
+  
+  .components{
+    margin-bottom: 30px;
   }
