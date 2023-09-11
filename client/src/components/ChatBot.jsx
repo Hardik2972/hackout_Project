@@ -20,20 +20,20 @@ function ChatBot(){
        console.log(data);
     }
     return(
-        <div style={{display:"flex",flexFlow:"column"}}>
+        <div style={{display:"flex",flexFlow:"column",padding:"10px"}}>
             {
                 data.map((e,idx)=>{
                     var flt= idx%2?"right":"left";
                     console.log(flt)
                     return(
-                        <div key={idx} style={{textAlign:"center",float:"left"}}>
-                            <hr />
-                            <div style={{float:flt}}>{e.answer}</div>
+                        <div key={idx} style={{textAlign:"center"}}>
+                            <br />
+                            <div style={{float:flt ,backgroundColor:"#90EE90",borderRadius:"10px 10px 10px 0px",padding:"7px"}}>{e.answer}</div>
                         </div>
                     )
                 })
             }
-            <div style={{alignSelf:"flex-end",position:"absolute",bottom:"0px"}}>
+            <div id="query" style={{  position:"absolute", top:"80%",alignSelf:"flex-end"}}>
                 <input placeholder='ask your question' onChange={(e)=>{
                    setQuery(e.target.value);
                 }} 
