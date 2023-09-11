@@ -58,6 +58,10 @@
         const geolocation = navigator.geolocation;
         geolocation.getCurrentPosition(position=>{
           const {latitude , longitude} = position.coords;
+          var element1 = document.getElementById("lat");
+          var element2 = document.getElementById("lng");
+          element1.setAttribute("value",latitude);
+          element2.setAttribute("value",longitude);
           var map = L.map('map').setView([ latitude, longitude], 13);
 
           L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -69,6 +73,12 @@
           var marker = L.marker([latitude, longitude],{draggable:true}).addTo(map).bindPopup('Latlng(' + latitude+ ',' + " "+longitude + ')').openPopup();
           marker.on("dragend",function(e){
             changedPos = e.target.getLatLng();
+            const position = () =>{
+              var element1 = document.getElementById("lat");
+              var element2 = document.getElementById("lng");
+              element1.setAttribute("value",changedPos.lat);
+              element2.setAttribute("value",changedPos.lng);
+            };
             this.bindPopup(changedPos.toString()).openPopup();
           });
         })

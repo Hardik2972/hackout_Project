@@ -5,8 +5,11 @@ const Report = require("../models/Report");
 const {getUser} = require("../services/auth");
 
 const handleReport = async (req,res)=>{
-    const {time,text,ComplaintCases} = req.body;
+    const {time,text,ComplaintCases,latitude,longitude} = req.body;
+    console.log(req.body);
     const userReport = new Report();
+    userReport.latitude=latitude;
+    userReport.longitude=longitude;
     userReport.problem=text;
     userReport.complaintCases=ComplaintCases;
     userReport.timeOfIncident=time;
