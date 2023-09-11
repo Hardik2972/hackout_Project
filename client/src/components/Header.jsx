@@ -17,6 +17,7 @@ function OffcanvasExample(props) {
             <Nav.Link href="/secret">Blogs</Nav.Link>
           </Nav>
           <>
+            <Button onClick={props.emergency} style={{maxHeight:"50px" , marginRight:"10px"}}>Emergency</Button>
             <Button href="/index2.html" style={{maxHeight:"50px" , marginRight:"10px"}}>Feedback</Button>
             <Button onClick={props.logout} style={{maxHeight:"50px" , marginRight:"10px"}}>Log Out</Button>
             <Button
