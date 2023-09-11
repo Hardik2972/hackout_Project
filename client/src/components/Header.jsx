@@ -5,6 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import avatar from '../user.png';
 import { useState } from 'react';
 
+/**/
 function OffcanvasExample(props) {
   
   return (
