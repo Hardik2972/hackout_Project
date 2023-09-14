@@ -15,6 +15,11 @@ async function  handleLogin(req,res){
             return res.redirect("/login")
             } else{
             const token = setUser(user)
+            if(user.username === "Admin"){
+                return res.status(300).json({
+                    customToken: token,
+                })
+            }
             return res.status(200).json({
                 customToken: token,
             })

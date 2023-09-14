@@ -71,9 +71,10 @@ function increaselike(){
       <div className="noteFooter">
           <button onClick={increaselike}>Like</button>
           <button>comment</button>
-          <button>send</button>
       </div>
-      {/* <form onSubmit={(e)=> addComment(e)}>
+      {
+        <>
+        <form onSubmit={(e)=> addComment(e)}>
           <FloatingLabel
             controlId="floatingTextarea"
             label="Comments"
@@ -94,8 +95,9 @@ function increaselike(){
             }
             return (<></>)
         }) : <></>}
-        {flag && com.length>0?<p onClick={incLen}>load more...</p> : <></>}
-        </div> */}
+        {flag && com.length>0?<p onClick={incLen} style={{textAlign:"center"}}>load more...</p> : <></>}
+        </div> 
+        </>}
     </div>
   );
 }

@@ -5,16 +5,25 @@ const Report = require("../models/Report");
 const {getUser} = require("../services/auth");
 
 const handleReport = async (req,res)=>{
-    const {time,text,ComplaintCases,latitude,longitude} = req.body;
-    console.log(req.body);
-    const userReport = new Report();
-    userReport.latitude=latitude;
-    userReport.longitude=longitude;
-    userReport.problem=text;
-    userReport.complaintCases=ComplaintCases;
-    userReport.timeOfIncident=time;
-    await userReport.save();
-    return res.redirect("http://localhost:3000/");
+    //const {time,text,ComplaintCases,latitude,longitude} = req.body;
+    const userReport = new Report({
+        latitude:req.body.data.latitude,
+        longitude:req.body.data.longitude,
+        problem:req.body.data.problem,
+        complaint:req.body.data.desc,
+        timeOfIncident:req.body.data.time,
+        image:req.body.data.file,
+        seriousness:req.body.data.seriousness,
+        sender: req.body.customToken? getUser(req.body.customToken)._id : ""
+    });
+    
+    userReport.save()
+        .then((user) => {
+         return res.status(200).json("secret")
+        })
+        .catch((error) => {
+        return res.status(300).json("report")
+        })
 }
 
 async function hanadleMyPosts(req,res){

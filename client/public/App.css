@@ -41,3 +41,7 @@
   .components{
     margin-bottom: 30px;
   }
+
+  .leaflet-container{
+    height: 100vh;
+  }

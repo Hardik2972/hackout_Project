@@ -28,7 +28,7 @@ function ChatBot(){
                       var flt= idx%2?"right":"left";
                       console.log(flt)
                       return(
-                          <div key={idx} style={{textAlign:"left"}}>
+                          <div key={idx} style={{textAlign:"left",marginBottom:"10px"}}>
                               <br />
                               <div style={{float:flt ,backgroundColor:"#90EE90",borderRadius:"10px 10px 10px 0px",padding:"7px",margin:"5px"}}>{e.answer}</div>
                           </div>
