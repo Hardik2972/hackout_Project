@@ -4,9 +4,9 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import InputGroup from 'react-bootstrap/InputGroup';
-//import MapView from './Map/Map';
+import MapView from './Map/Map';
 import {Map , Marker , Popup, TileLayer ,MapContainer, useMap} from 'react-leaflet'
-//import L from 'leaflet';
+import L from 'leaflet';
 import icon from "./Map/constants";
 import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from 'react-router-dom';
