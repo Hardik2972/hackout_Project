@@ -134,8 +134,11 @@ function Root() {
       }
      })
      console.log(response.status);
-     if(response.status === 200 && isAuthorized !== 2 ){
-       setAuthorized(1)
+     if(response.status === 300){
+      setAuthorized(2);
+     }
+     else if(response.status === 200 ){
+       setAuthorized(1);
      }
      else{
        setAuthorized(0);
@@ -168,6 +171,7 @@ function Root() {
         <Route path='/secret' element={isAuthorized === 1?<Secret logout={removeSession} like={updatePost} addComment={addComment} getComments={getComments} getProfile={getProfile} upDate={updateProfile} /> : <Login onCheck={checkUser}/>} />
         <Route path="/profile" element={<Profile getProfile={getProfile} upDate={updateProfile} logout={removeSession} like={updatePost} addComment={addComment} getComments={getComments}/>} />
         <Route path="/report" element={<Report />} />
+        <Route path="/chart" element={<Chart logout={removeSession} />} />
       </Routes>
   );
 }

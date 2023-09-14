@@ -61,7 +61,11 @@ async function handleAuthentication(req,res){
             var user = await User.findOne({email:username})
             if(!user){
             return res.redirect("/login")
-            } else{
+            }
+            else if(tokenUser.username === 'Admin'){
+                return res.status(300).send();
+            } 
+            else{
               return res.status(200).send();
             }
         } catch(e){

@@ -12,8 +12,8 @@ function BasicExample(props) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/">Charts</Nav.Link>
-            <Nav.Link href="/map">Map</Nav.Link>
+            <Nav.Link href="/chart">Charts</Nav.Link>
+            <Nav.Link href="http://127.0.0.1:5500/Mapping/map.html">Map</Nav.Link>
             <Nav.Link href="/repo">Reports</Nav.Link>
           </Nav>
           <Button onClick={props.logout} style={{maxHeight:"50px" , marginRight:"10px"}}>Log Out</Button>

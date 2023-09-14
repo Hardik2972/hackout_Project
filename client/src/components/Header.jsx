@@ -17,9 +17,9 @@ function OffcanvasExample(props) {
           <Nav className="me-auto">
             <Nav.Link href="/secret">Blogs</Nav.Link>
             <Nav.Link href="/report">Report</Nav.Link>
+            <Nav.Link href="http://127.0.0.1:5500/Mapping/map.html">Map</Nav.Link>
           </Nav>
           <>
-            <Button href='/report' style={{maxHeight:"50px" , marginRight:"10px"}}>Report</Button>
             <Button onClick={props.logout} style={{maxHeight:"50px" , marginRight:"10px"}}>Log Out</Button>
             <Button
                 href="/profile"
