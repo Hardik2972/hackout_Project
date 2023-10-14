@@ -56,7 +56,7 @@ function Signup(props){
 		return;
 	}
 	async function sendOtp(){
-		var mailformat = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+		var mailformat = /^[a-zA-Z0-9._%+-]+@dtu\.ac\.in$/;
 		if(formD.email.match(mailformat)) {
 			document.getElementById("useremail").focus();
 			const res= await props.otp(formD.email);

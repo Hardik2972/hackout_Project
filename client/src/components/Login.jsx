@@ -52,7 +52,10 @@ function Login(props) {
       <button type="submit" className="button" onClick={submitNote}>Sign in</button>
       <p id="alert" style={{color:"red" , fontSize:"14px"}}></p>
     </form>
+    <p style={{textAlign:"center"}}>or</p>
     <p className="help">Don't have an account? <a href="/signup">Sign up</a></p>
+    <p style={{textAlign:"center"}}>or</p>
+    <p className="help">Want to report anonymously? <a href="/report">Report</a></p>
 		</section>
     </div>
   );

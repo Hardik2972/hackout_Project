@@ -74,7 +74,7 @@ function Userposts(props) {
             }
             return (<></>)
            }) : <></>}
-        {flag && com.length>0?<p onClick={incLen}>load more...</p> : <></>}
+        {flag && com.length>0?<p onClick={incLen} style={{textAlign:"center"}}>load more...</p> : <></>}
         </div>
     </div>
   );

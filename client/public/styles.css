@@ -343,3 +343,95 @@ footer p {
   }
 }
 
+
+@media (min-width:1100px) {
+  #reportForm{
+    position: absolute;
+    top: 50px;
+    width: 50%;
+    height: 80vh;
+    left: 20px;
+  }
+
+  #map{
+    width: 52vw;
+    position: relative;
+    top: 50px;
+    left: 38vw;
+  }
+
+  #rf{
+    width: 100%;
+  }
+
+  #f{
+    position: relative;
+    left: 20px;
+    width: 80%;
+    height: 80vh;
+    background-color: #f5ba13;
+    padding-top: 12%;
+    border-radius: 10px;
+  }
+  #repos{
+    display: none;
+  }
+  .element{
+    position: relative;
+    left: 20%;
+  }
+}
+
+@media (max-width:1100px) {
+  #map{
+    position: relative;
+    top: 50px;
+  }
+  
+  #rf{
+    position: relative;
+    top: 50px;
+    width: 100vw;
+  }
+  
+  #f{
+    width: 95%;
+    background-color: #f5ba13;
+    padding: 20px;
+    border-radius: 10px;
+  }  
+  
+  #repo{
+    display: none;
+  }
+  #repos{
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+  }
+  .element{
+    position: relative;
+    left: 20%;
+  }
+}
+
+@media (max-width:576px) {
+  .element{
+    width: 60%;
+  }
+}
+
+.long-text {
+  max-height: 95px; /* Set the initial height to show a limited portion */
+  overflow: hidden;
+}
+
+#show-more {
+  display: block;
+}
+
+
+
+
+

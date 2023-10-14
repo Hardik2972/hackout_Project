@@ -11,16 +11,15 @@ function OffcanvasExample(props) {
   return (
     <Navbar expand="lg" id="top" className="bg-body-tertiary" sticky="top" style={{width:"100%"}}>
       <Container>
-        <Navbar.Brand>DreamBlog</Navbar.Brand>
+        <Navbar.Brand>Virangana</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav" >
           <Nav className="me-auto">
             <Nav.Link href="/secret">Blogs</Nav.Link>
+            <Nav.Link href="/report">Report</Nav.Link>
+            <Nav.Link href="http://127.0.0.1:5500/Mapping/map.html">Map</Nav.Link>
           </Nav>
           <>
-            <Button onClick={props.emergency} style={{maxHeight:"50px" , marginRight:"10px"}}>Emergency</Button>
-            <Button href="/index2.html" style={{maxHeight:"50px" , marginRight:"10px"}}>Feedback</Button>
-            <Button href="/index2.html" style={{maxHeight:"50px" , marginRight:"10px"}}>Report</Button>
             <Button onClick={props.logout} style={{maxHeight:"50px" , marginRight:"10px"}}>Log Out</Button>
             <Button
                 href="/profile"
@@ -35,3 +34,5 @@ function OffcanvasExample(props) {
 }
 
 export default OffcanvasExample;
+
+/*  <Button onClick={props.emergency} style={{maxHeight:"50px" , marginRight:"10px"}}>Emergency</Button> */

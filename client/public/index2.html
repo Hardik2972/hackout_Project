@@ -41,12 +41,28 @@
             <option value="miscellaneous">Harashment, Stocking, Abusement and Molestation Cases</option>
           </select>
         </div>
+        <div class="components">
+          <select class="dropdown" name="ComplaintCases">
+            <option value="volvo">select your complaint seriousness</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+          </select>
+        </div>
         <input value="123" name="latitude" id="lat" style="display: none;"></input>
         <input value="456" name="longitude" id="lng" style="display: none;"></input>
+        <input
+          type="file" 
+          lable="Image"
+          name="MyFile"
+          id="file-upload"
+          accept=".jpeg, .png, .jpeg"
+          placeholder="upload"
+          onchange="handleFileUpload()"
+        />
         <div class="components">
           <button style="width: 100%;" type='submit' onclick="position()">Report</button>
         </div>
-        
       </div>
       <div id="map"></div>
     </form>
@@ -79,6 +95,7 @@
               var element2 = document.getElementById("lng");
               element1.setAttribute("value",changedPos.lat);
               element2.setAttribute("value",changedPos.lng);
+              console.log(document.getElementById("file-upload").value)
             };
             this.bindPopup(changedPos.toString()).openPopup();
           });
