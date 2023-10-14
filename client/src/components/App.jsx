@@ -8,6 +8,7 @@ import io from 'socket.io-client';
 import Profile from "./Profile";
 import Report from "./Report"
 import Chart from "../Chart/App";
+import ReportList from "../Chart/Report";
 
 const socket= io.connect("http://localhost:8080")
 
@@ -172,6 +173,7 @@ function Root() {
         <Route path="/profile" element={<Profile getProfile={getProfile} upDate={updateProfile} logout={removeSession} like={updatePost} addComment={addComment} getComments={getComments}/>} />
         <Route path="/report" element={<Report />} />
         <Route path="/chart" element={<Chart logout={removeSession} />} />
+        <Route path="/repo" element={<ReportList />} />
       </Routes>
   );
 }
