@@ -1,6 +1,10 @@
 const User = require("../models/User");
 const {setUser,getUser} = require("../services/auth");
+const twilio = require('twilio');
+const dotenv = require('dotenv');
+dotenv.config();
 
+const phone = ['+918826987071']
 async function  handleLogin(req,res){
     const username = req.body.email
     const password = req.body.password
@@ -77,4 +81,18 @@ async function handleAuthentication(req,res){
     return res.status(300).send();
 }
 
-module.exports = {handleLogin ,handleSignup ,handleAuthentication};
+function sendSms(phone, loc){
+    const client = new twilio(process.env.TWILIO_SID, process.env.TWILIO_AUTH_CODE);
+    return client.messages
+    .create({body:`Hey this is an emergency alert someone needs help location ${loc}`,from:'+15075744245', to: phone})
+    .then((message)=>console.log(message))
+    .catch((err)=>console.log(err))
+}
+async function handleSms(req,res){
+    console.log(req.query.lat)
+    const loc = `https://www.google.com/maps?q=${req.query.lat},${req.query.lng}&z=${17}`;
+    phone.map((e)=>sendSms(e,loc));
+    res.send("ok");
+}
+
+module.exports = {handleLogin ,handleSignup ,handleAuthentication, handleSms};

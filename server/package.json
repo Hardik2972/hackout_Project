@@ -19,7 +19,8 @@
     "jsonwebtoken": "^9.0.1",
     "mongoose": "^7.4.2",
     "nodemailer": "^6.9.4",
-    "socket.io": "^4.7.2"
+    "socket.io": "^4.7.2",
+    "twilio": "^4.19.0"
   },
   "repository": {
     "type": "git",
