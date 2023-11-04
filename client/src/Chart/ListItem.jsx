@@ -3,6 +3,18 @@ import useState from "react";
 
 function Item(props){
    
+   async function update(){
+      console.log(props);
+      const response= await fetch("http://localhost:8080/getData",{
+        method: "POST",
+        body: JSON.stringify({"approved":true,"key":props.id}) ,
+        headers:{
+          "Content-Type": "application/json",
+        }
+      })
+      
+   }
+   
    return(
       <>
          <hr />
@@ -44,7 +56,8 @@ function Item(props){
             <div style={{width:"2vw"}}><button className="button" onClick={()=>{
                window.open(props.Location, '_blank')
             }}>see</button></div>
-            <div style={{width:"2vw"}}><button className="button" style={{backgroundColor:"red"}}>close</button></div>
+            <div style={{width:"2vw"}}><button className="button" style={{backgroundColor:"red"}} onClick={update}>Approved</button></div>
+            {/* <div style={{width:"2vw"}}><button className="button" style={{backgroundColor:"red"}} onClick={update(false)}>Close</button></div> */}
          </div>
       </>
    );
