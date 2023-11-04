@@ -17,11 +17,14 @@ async function  handleLogin(req,res){
             const token = setUser(user)
             if(user.username === "Admin"){
                 return res.status(300).json({
+                    
                     customToken: token,
+                    valid: true,
                 })
             }
             return res.status(200).json({
                 customToken: token,
+                valid: false,
             })
             }
         })
@@ -62,8 +65,8 @@ async function handleAuthentication(req,res){
             if(!user){
             return res.redirect("/login")
             }
-            else if(tokenUser.username === 'Admin'){
-                return res.status(300).send();
+            else if(user.username === 'Admin'){
+                return res.status(300).json({valid:true});
             } 
             else{
               return res.status(200).send();
