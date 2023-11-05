@@ -14,6 +14,11 @@ Here above is the name of our website Virangana with our slogan (EMPOWER, EDUCAT
 Above is the map of our college where you can easily see the broad view of the college and having an ease in finding the location where you feel molested.
 So this is our website Virangana(a small initiative to Empower, Educate and Protect the future of our nation). Jai Hind!
 
+PS:
+Chatbot code(nltk.py ,app.py) for message preprocessing was repurposed from previous project.(cuz DRY)
+
+
+
 
 
 
