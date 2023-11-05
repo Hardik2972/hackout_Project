@@ -8,7 +8,9 @@ const reportModel = new mongoose.Schema({
     longitude:{type:String},
     complaint:{type:String},
     timeOfIncident:{type:String},
-    image:{type:String}
+    image:{type:String},
+    approved:{type: String,default: false},
+    flag:{type: String,default: true},
 },{timestamps: true});
 
 const Report = new mongoose.model("Report",reportModel);

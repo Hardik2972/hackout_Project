@@ -8,6 +8,7 @@ const newUser= require("./routes/newUser");
 const sendOtp= require("./routes/sendOtp");
 const blogRoute= require("./routes/blog");
 const adminRoute= require("./routes/admin");
+const dataRoute= require("./routes/dataRoute");
 const {getUser} = require("./services/auth");
 const { handleDeletePost, handleAddPost} = require("./controller/blogFunc");
 
@@ -51,6 +52,7 @@ app.use("/",newUser);
 app.use("/otpVerification",sendOtp);
 app.use("/api",blogRoute);
 app.use("/get",adminRoute);
+app.use("/getData",dataRoute);
 
 server.listen(8080, () => {
     console.log("server listening on port: 8080");

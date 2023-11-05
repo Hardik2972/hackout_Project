@@ -73,10 +73,11 @@ export default function App() {
                 <Col sm={7} className="mb-4 element">
                     <Form.Select aria-label="Default select example" name="problem" >
                         <option>select your complaint</option>
-                        <option value="1">Lighting issues</option>
-                        <option value="2">Safety Concerns</option>
-                        <option value="3">Violence Report</option>
-                        <option value="4">Harashment, Stocking, Abusement and Molestation Cases</option>
+                        <option value="Lighting issues">Lighting issues</option>
+                        <option value="Safety Concerns">Safety Concerns</option>
+                        <option value="Violence Report">Violence Report</option>
+                        <option value="Molestation Cases">Molestation Cases</option>
+                        <option value="Miscellaneous">Miscellaneous</option>
                     </Form.Select>
                 </Col>
                 <Col sm={7} className="mb-4 element">
@@ -106,7 +107,6 @@ export default function App() {
       </>
     );
   }
-
   
   function LocationMarker() {
     const [position, setPosition] = useState(null);  

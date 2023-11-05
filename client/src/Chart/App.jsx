@@ -27,31 +27,29 @@ function Chart(props) {
     })
   },[])
 */
-  const yearReportData = useRef({
-    labels: UserData.map((e)=>e.year),
-    datasets: [
-      {
-        label: "Users Gained",
-        data: UserData.map((e)=>e.userGain),
-        backgroundColor: [
-          "rgba(75,192,192,1)",
-          "#ecf0f1",
-          "#50AF95",
-          "#f3ba2f",
-          "#2a71d0",
-        ],
-        borderColor: "black",
-        borderWidth: 2,
-      },
-    ],
-  });
+  const [data, setData] = useState([]);
+  const caseReportData = useRef({});
+  const yearReportData = useRef({});
+  useEffect(()=>{
+    getData();
+  },[]);
 
-  const caseReportData = useRef({
-    labels: Problem.map((e)=>e.issues),
+  async function getData(){
+    const response= await fetch("http://localhost:8080/get/count",{
+      method: "GET" ,
+    })
+    const result = await response.json();
+    setData(result.data);
+  }
+
+  console.log(data);
+  
+  yearReportData.current = {
+    labels: data.yList,
     datasets: [
       {
         label: "Users Gained",
-        data: Problem.map((e)=>e.userGain),
+        data: data.ycount,
         backgroundColor: [
           "rgba(75,192,192,1)",
           "#ecf0f1",
@@ -63,7 +61,30 @@ function Chart(props) {
         borderWidth: 2,
       },
     ],
-  })
+  };
+
+  /*problem?.pList?.map((e)=>{
+      console.log(e)
+      return e
+    })*/
+  caseReportData.current = {
+    labels: data.pList,
+    datasets: [
+      {
+        label: "Users Gained",
+        data: data.pcount,
+        backgroundColor: [
+          "rgba(75,192,192,1)",
+          "#ecf0f1",
+          "#50AF95",
+          "#f3ba2f",
+          "#2a71d0",
+        ],
+        borderColor: "black",
+        borderWidth: 2,
+      },
+    ],
+  }
 
 /*
   yearReportData.current ={
@@ -116,17 +137,13 @@ function Chart(props) {
     <>
       <Header logout={props.logout} />
       <div className="App">
-        <div style={{ maxWidth: 600 , minWidth: 300 , width:"50vw"}}>
+        <div style={{ maxWidth: 1000 , minWidth: 300 , width:"80vw"}}>
           <BarChart chartData={caseReportData.current} />
           <div>Problem Complaints</div>
         </div>
-        <div style={{ maxWidth: 600 , minWidth: 300 , width:"50vw"}}>
+        <div style={{ maxWidth: 1000 , minWidth: 300 , width:"80vw"}}>
           <LineChart chartData={yearReportData.current} />
           <div>Year-Wise Report Cases </div>
-        </div>
-        <div style={{ maxWidth: 400 , minWidth: 300 , width:"50vw" }}>
-          <PieChart chartData={yearReportData.current} />
-          <div>Area-Wise Report Cases</div>
         </div>
       </div>
     </>

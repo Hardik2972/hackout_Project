@@ -8,7 +8,7 @@ import io from 'socket.io-client';
 import Profile from "./Profile";
 import Report from "./Report"
 import Chart from "../Chart/App";
-import ReportList from "../Chart/Report";
+import ReportList from "../Chart/ReportList";
 
 const socket= io.connect("http://localhost:8080")
 
@@ -51,7 +51,8 @@ function Root() {
       }
      })
      const res= await response.json();
-     if(response.status === 300){
+     if(res.valid === true){
+       console.log(res);
       window.localStorage.setItem("customToken",(res).customToken)
       setAuthorized(2);
      }
@@ -134,7 +135,6 @@ function Root() {
         "Content-Type": "application/json",
       }
      })
-     console.log(response.status);
      if(response.status === 300){
       setAuthorized(2);
      }
@@ -147,9 +147,7 @@ function Root() {
   }
 
   function getPath(){
-    console.log("getPath");
     if(localStorage.getItem("customToken")){
-      console.log(true);
       isAuthenticated();
     } else{
       setAuthorized(0);
@@ -164,7 +162,11 @@ function Root() {
       :
 
       isAuthorized === 2?
-         <Chart logout={removeSession} />
+      <Routes>
+        <Route path="/" element={<Chart logout={removeSession} />}/>
+        <Route path="/chart" element={<Chart logout={removeSession} />} />
+        <Route path="/repo" element={<ReportList />} />
+      </Routes>
       :
       <Routes>
         <Route path='/' element={isAuthorized === 1?<Secret logout={removeSession} like={updatePost} addComment={addComment} getComments={getComments} getProfile={getProfile} upDate={updateProfile} /> : <Login onCheck={checkUser}/>} />
@@ -172,8 +174,7 @@ function Root() {
         <Route path='/secret' element={isAuthorized === 1?<Secret logout={removeSession} like={updatePost} addComment={addComment} getComments={getComments} getProfile={getProfile} upDate={updateProfile} /> : <Login onCheck={checkUser}/>} />
         <Route path="/profile" element={<Profile getProfile={getProfile} upDate={updateProfile} logout={removeSession} like={updatePost} addComment={addComment} getComments={getComments}/>} />
         <Route path="/report" element={<Report />} />
-        <Route path="/chart" element={<Chart logout={removeSession} />} />
-        <Route path="/repo" element={<ReportList />} />
+        
       </Routes>
   );
 }
