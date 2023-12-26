@@ -52,6 +52,7 @@ function Root() {
       }
      })
      const res= await response.json();
+
      if(res.valid === true){
        console.log(res);
       window.localStorage.setItem("customToken",(res).customToken)
@@ -136,6 +137,7 @@ function Root() {
         "Content-Type": "application/json",
       }
      })
+
      if(response.status === 300){
       setAuthorized(2);
      }
@@ -175,6 +177,8 @@ function Root() {
         <Route path='/secret' element={isAuthorized === 1?<Secret logout={removeSession} like={updatePost} addComment={addComment} getComments={getComments} getProfile={getProfile} upDate={updateProfile} /> : <Login onCheck={checkUser}/>} />
         <Route path="/profile" element={<Profile getProfile={getProfile} upDate={updateProfile} logout={removeSession} like={updatePost} addComment={addComment} getComments={getComments}/>} />
         <Route path="/report" element={<Report />} />
+        <Route path="/chart" element={<Chart logout={removeSession} />} />
+        <Route path="/repo" element={<ReportList />} />
       </Routes>
   );
 }

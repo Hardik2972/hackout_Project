@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const phone = ['+918826987071']
+
 async function  handleLogin(req,res){
     const username = req.body.email
     const password = req.body.password
@@ -21,7 +22,6 @@ async function  handleLogin(req,res){
             const token = setUser(user)
             if(user.username === "Admin"){
                 return res.status(300).json({
-                    
                     customToken: token,
                     valid: true,
                 })
@@ -71,6 +71,9 @@ async function handleAuthentication(req,res){
             }
             else if(user.username === 'Admin'){
                 return res.status(300).json({valid:true});
+            }
+            else if(tokenUser.username === 'Admin'){
+                return res.status(300).send();
             } 
             else{
               return res.status(200).send();
@@ -96,3 +99,4 @@ async function handleSms(req,res){
 }
 
 module.exports = {handleLogin ,handleSignup ,handleAuthentication, handleSms};
+

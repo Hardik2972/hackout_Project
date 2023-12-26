@@ -2,7 +2,6 @@ import {Routes, Route, useNavigate} from 'react-router-dom';
 import useState from "react";
 
 function Item(props){
-   
    async function update(){
       console.log(props);
       const response= await fetch("http://localhost:8080/getData",{
