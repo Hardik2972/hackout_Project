@@ -12,7 +12,7 @@ const parserObj = new Parser();
 router.post("/",async (req,res)=>{
     try{
        
-        const reports= await Report.findOneAndUpdate({_id:req.body.key},{approved:req.body.approved},{flag:"false"});
+        const reports= await Report.findOneAndUpdate({_id:req.body.key},{approved:req.body.approved,flag:"false"});
     // const reports= await Report.find(filter);
       console.log(reports);
     

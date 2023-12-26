@@ -9,6 +9,7 @@ import Profile from "./Profile";
 import Report from "./Report"
 import Chart from "../Chart/App";
 import ReportList from "../Chart/ReportList";
+import MapPage from '../components/MapPage';
 
 const socket= io.connect("http://localhost:8080")
 
@@ -174,7 +175,6 @@ function Root() {
         <Route path='/secret' element={isAuthorized === 1?<Secret logout={removeSession} like={updatePost} addComment={addComment} getComments={getComments} getProfile={getProfile} upDate={updateProfile} /> : <Login onCheck={checkUser}/>} />
         <Route path="/profile" element={<Profile getProfile={getProfile} upDate={updateProfile} logout={removeSession} like={updatePost} addComment={addComment} getComments={getComments}/>} />
         <Route path="/report" element={<Report />} />
-        
       </Routes>
   );
 }
