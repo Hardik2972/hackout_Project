@@ -1,8 +1,4 @@
-1) This is a community blogging website built using MERN stack.
-2) Used JWT authentication for authenticating user on website.
-3) Used SOCKET.IO for creating real time application.
-4) Created Website using MVC architecture.
-
+# hackout_Project
 ![WhatsApp Image 2023-11-05 at 10 18 11_66ed2496](https://github.com/Hardik2972/hackout_Project/assets/141567966/f22a22e8-3dbd-43e5-bd12-489dd9c0645d)
 Above is the image of charts showing amount of users gained in different cases like Lightining issues, Molestation cases, Safety measures, Violance Report and Miscellaneus.
 ![WhatsApp Image 2023-11-05 at 10 18 11_a6b1c005](https://github.com/Hardik2972/hackout_Project/assets/141567966/a2cf61e7-f43d-4b4b-a845-34cdfff5fef1)
